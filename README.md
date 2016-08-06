@@ -17,6 +17,9 @@ Open root directory of repo in Electron
 
 ## About
 Written in NodeJS/JavaScript & HTML/CSS
+
 Using material-icons from Google (under a CC license)
+
 Distriuted under an MIT licence
+
 Made by Eddie Qi for fun

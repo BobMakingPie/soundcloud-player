@@ -15,15 +15,13 @@ function updateQueueVis () {
     queueE.removeChild(queueE.firstChild);
   }
   queue.forEach(function(trkObj) {
-    var qItem = document.createElement("li");
-    qItem.className = "queued";
-    console.log(qItem);
-    console.log(qTemplate.childNodes);
-    qTemplate.childNodes.forEach(function(a, b, c) {qItem.appendChild(a)});
-    qItem.childNodes[1].appendChild(document.createTextNode(trkObj.uploader));
-    qItem.childNodes[2].appendChild(document.createTextNode(trkObj.title));
-    qItem.childNodes[3].appendChild(document.createTextNode(trkObj.id));
-    queueE.appendChild(qItem);
+    qTemplate.content.querySelector("img").src = trkObj.arturl;
+    var memes = qTemplate.content.querySelectorAll("span");
+    memes[0].textContent = trkObj.uploader;
+    memes[1].textContent = trkObj.title;
+    memes[2].textContent = trkObj.id;
+    var clone = document.importNode(qTemplate.content, true);
+    queueE.appendChild(clone);
   });
 }
 
@@ -38,10 +36,10 @@ window.onload =  function() {
   player = document.getElementById("player");
   url = document.getElementById("url");
   submit = document.getElementById("add-submit");
-  qTemplate = document.getElementById("qTemplateWrapper");
+  qTemplate = document.querySelector("#qTemplateWrapper");
   queueE = document.getElementById("queue");
   // Other
-  queue = []
+  queue = [];
 
   submit.onclick = function () {
     scMeme.resolve(url.value, function (err, data) {

@@ -23,12 +23,14 @@
     </script>
   </head>
   <body>
-    <div id="qTemplateWrapper" class="hidden">
-      <img class="track-art" />
-      <span class="track-uploader"></span>
-      <span class="track-title"></span>
-      <span class="hidden trk-id"></span>
-    </div>
+    <template id="qTemplateWrapper" class="hidden">
+      <li class="queued">
+        <img class="track-art" />
+        <span class="track-uploader"></span>
+        <span class="track-title"></span>
+        <span class="hidden trk-id"></span>
+      </li>
+    </template>
     <div id="titleBar">
       <div class="button" id="close" onclick="closeWindow()"><i class="icon">clear</i></div>
       <div class="button" id="maximise" onclick="maximizeWindow()"><i class="icon">add</i></div>

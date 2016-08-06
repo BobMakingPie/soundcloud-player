@@ -16,6 +16,11 @@ cd soundcloud-player
 npm install
 ```
 
+Create a SoundCloud app and a config.js:
+```js
+module.exports = { scid: "YOUR-SOUNDCLOUD-APP-ID" }
+```
+
 Open root directory of repo in Electron
 ```bash
 /path/to/electron .

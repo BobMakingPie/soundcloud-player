@@ -1,5 +1,6 @@
 var sc = require("soundcloud");
-var scID = "f70a958cc7c2fe396edb8caeefb0373d";
+var config = require("../config");
+var scID = config.scid;
 
 sc.initialize({ client_id: scID });
 

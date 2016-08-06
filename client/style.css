@@ -44,9 +44,24 @@ body {
   opacity: 0.75;
 }
 
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: calc(100% - 20px);
+  height: 20px;
+  padding: 10px;
+  text-align: right;
+  line-height: 20px;
+  font-family: "Roboto Slab";
+}
+
+#footer img {
+  vertical-align: -1px;
+}
+
 #title {
   flex-grow: 1;
-  //font-family: "Roboto Slab";
+  font-family: "Roboto Slab";
 }
 
 #main {

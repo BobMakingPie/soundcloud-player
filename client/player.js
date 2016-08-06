@@ -1,5 +1,5 @@
 // initialise things so i can use them in the console
-var update, plater, url, submit, src, id
+var update, player, url, submit, src, id
 
 window.onload =  function() {
   update = new Event("updatePlayer");

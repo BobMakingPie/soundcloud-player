@@ -1,9 +1,11 @@
+// initialise things so i can use them in the console
+var update, plater, url, submit, src, id
+
 window.onload =  function() {
-  var update = new Event("updatePlayer");
-  var player = document.getElementById("player");
-  var url = document.getElementById("url");
-  var submit = document.getElementById("add-submit");
-  var src, id;
+  update = new Event("updatePlayer");
+  player = document.getElementById("player");
+  url = document.getElementById("url");
+  submit = document.getElementById("add-submit");
 
   player.addEventListener("updatePlayer", function () {
     player.src = src;

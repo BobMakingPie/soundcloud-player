@@ -1,0 +1,16 @@
+{
+  "name": "soundcloud-player",
+  "version": "0.0.1",
+  "description": "Audio player for SoundCloud",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/electron-prebuilt/dist/electron ."
+  },
+  "author": "Eddie Qi",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^2.5.1",
+    "soundcloud": "^3.1.2"
+  }
+}

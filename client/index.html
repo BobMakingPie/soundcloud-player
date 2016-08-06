@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hi</title>
+    <link href="style.css" rel="stylesheet" />
+    <link href="../assets/Lato/load.css" rel="stylesheet" />
+    <script>var scMeme = require("./soundcloud");</script>
+    <script src="player.js"></script>
+    <script>
+      var remote = require("electron").remote;
+
+      function closeWindow () {
+        remote.getCurrentWindow().close();
+      }
+
+      function maximizeWindow () {
+        remote.getCurrentWindow().maximize();
+      }
+
+      function minimizeWindow () {
+        remote.getCurrentWindow().minimize();
+      }
+    </script>
+  </head>
+  <body>
+    <div id="titleBar">
+      <div class="button" id="close" onclick="closeWindow()"><i class="icon">clear</i></div>
+      <div class="button" id="maximise" onclick="maximizeWindow()"><i class="icon">add</i></div>
+      <div class="button" id="minimise" onclick="minimizeWindow()"><i class="icon">remove</i></div>
+      <span id="title">SoundCloud Player</span>
+    </div>
+    <div id="titleShadow"></div>
+
+    <div id="enterUrl">
+      <input id="url" type="url" placeholder="SoundCloud track URL" />
+      <button id="add-submit">Play</button>
+    </div>
+
+    <audio id="player" controls></audio>
+
+  </body>
+</html>

@@ -1,0 +1,68 @@
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../assets/MaterialIcons.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../assets/Roboto-Slab.woff2) format('woff2');
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: rgb(54,54,54);
+  font-family: "Lato";
+  color: white;
+}
+
+.icon {
+  font-family: "Material Icons";
+  font-style: normal;
+}
+
+.button {
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  border-radius: 100%;
+  margin-left: 10px;
+  -webkit-app-region: no-drag;
+  opacity: 0.5;
+  background-color: #ffffff;
+  text-align: center;
+  cursor: default;
+  font-size: 0.75em;
+  color: black;
+}
+
+.button:hover {
+  opacity: 0.75;
+}
+
+#title {
+  flex-grow: 1;
+  //font-family: "Roboto Slab";
+}
+
+#titleBar {
+  position: fixed;
+  background: rgb(65,65,65);
+  display: flex;
+  flex-direction: row-reverse;
+  width: calc(100% - 20px);
+  padding: 10px;
+  -webkit-app-region: drag;
+  z-index: 4107; // any big number is fiiine
+}
+
+#titleShadow {
+  width: calc(100%);
+  height: 40px;
+  // opacity: 0;
+  border-bottom: rgb(255,119,0) 3px solid;
+}

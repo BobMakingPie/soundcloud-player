@@ -10,7 +10,12 @@ module.exports = {
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
       if (request.readyState == 4) {
-        callback(null, request.responseText); // Pass response to callback
+        var resp = JSON.parse(request.responseText)
+        if (!resp.errors) {
+          callback(null, resp); // Pass response to callback
+        } else {
+          callback(console.error(resp.errors[0].error_message), null);
+        }
       }
     }
     request.open("GET", `https://api.soundcloud.com/resolve?url=${url}&client_id=${scID}`, true);
@@ -35,7 +40,34 @@ module.exports = {
     request.send(null);
 
     function setStrUrl (data) {
-      callback(JSON.parse(data).http_mp3_128_url);
+      if (!data) {
+        callback(console.error("No data received"), null);
+      } else {
+        callback(null, JSON.parse(data).http_mp3_128_url);
+      }
     }
+  },
+
+  getObj: function (id, cb) {
+    var trkObj = {id: id};
+    console.log("yes");
+    sc.get("/tracks/" + id).then(function (d) {
+      console.log("yes");
+      if (!d.errors) {
+        trkObj.title = d.title;
+        trkObj.uploader = d.user.username;
+        trkObj.arturl = d.artwork_url;
+        scMeme.getStreamURL(id, function (err, d) {
+          if (!err) {
+            trkObj.streamurl = d;
+            cb(null, trkObj);
+          } else {
+            cb(err, null);
+          }
+        });
+      } else {
+        cb(console.error(d.errors[0].error_message), null);
+      }
+    });
   }
 }

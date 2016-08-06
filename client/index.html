@@ -23,6 +23,12 @@
     </script>
   </head>
   <body>
+    <div id="qTemplateWrapper" class="hidden">
+      <img class="track-art" />
+      <span class="track-uploader"></span>
+      <span class="track-title"></span>
+      <span class="hidden trk-id"></span>
+    </div>
     <div id="titleBar">
       <div class="button" id="close" onclick="closeWindow()"><i class="icon">clear</i></div>
       <div class="button" id="maximise" onclick="maximizeWindow()"><i class="icon">add</i></div>
@@ -33,12 +39,17 @@
 
     <div id="main">
       <div id="enterUrl">
-        <input id="url" type="url" placeholder="SoundCloud track URL" />
+        <input id="url" type="url" placeholder="SoundCloud track/playlist URL" />
         <button id="add-submit">Play</button>
       </div>
 
       <div id="player-wrapper">
         <audio id="player" controls autoplay></audio>
+      </div>
+
+      <div id="queueWrapper">
+        <ul id="queue">
+        </ul>
       </div>
     </div>
 

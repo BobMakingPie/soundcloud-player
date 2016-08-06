@@ -10,9 +10,15 @@ Clone this repo:
 git clone https://github.com/BobMakingPie/soundcloud-player
 ```
 
+npm install
+```bash
+cd soundcloud-player
+npm install
+```
+
 Open root directory of repo in Electron
 ```bash
-/path/to/electron soundcloud-player
+/path/to/electron .
 ```
 
 ## About

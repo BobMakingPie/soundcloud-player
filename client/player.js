@@ -12,12 +12,16 @@ window.onload =  function() {
   });
 
   submit.onclick = function() {
-    scMeme.resolve(url.value, function(d) { // Get track ID
-      id = JSON.parse(d).id;
-      scMeme.getStreamURL(id, function(u) { // i dont like the look of this nest
-        src = u
-        player.dispatchEvent(update);
-      });
+    scMeme.resolve(url.value, function(err, d) { // Get track ID
+      if (!err) {
+        id = JSON.parse(d).id;
+        scMeme.getStreamURL(id, function(u) { // i dont like the look of this nest
+          src = u
+          player.dispatchEvent(update);
+        });
+      } else {
+        console.error(error);
+      }
     });
   }
 }

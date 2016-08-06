@@ -10,7 +10,7 @@ module.exports = {
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
       if (request.readyState == 4) {
-        callback(request.responseText); // Pass response to callback
+        callback(null, request.responseText); // Pass response to callback
       }
     }
     request.open("GET", `https://api.soundcloud.com/resolve?url=${url}&client_id=${scID}`, true);

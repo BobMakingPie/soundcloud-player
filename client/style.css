@@ -53,6 +53,8 @@ body {
   text-align: right;
   line-height: 20px;
   font-family: "Roboto Slab";
+  background-color: rgba(0,0,0,0.5);
+  font-size: 14px;
 }
 
 #footer img {

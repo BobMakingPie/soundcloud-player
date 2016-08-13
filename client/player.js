@@ -1,5 +1,6 @@
 // initialise things so i can use them in the console
 var update, player, url, submit, src, id, queue, qTemplate, queueE;
+var deasync = require("deasync");
 
 function addToQueue(trkObj) {
   if (queue.length >= 50) {
@@ -67,24 +68,4 @@ window.onload =  function() {
     });
     url.value = "";
   }
-
-  /*player.addEventListener("updatePlayer", function () {
-    player.src = src;
-    id = null;
-    src = null;
-  });
-
-  submit.onclick = function() {
-    scMeme.resolve(url.value, function(err, d) { // Get track ID
-      if (!err) {
-        id = JSON.parse(d).id;
-        scMeme.getStreamURL(id, function(err, u) { // i dont like the look of this nest
-          if (!err) {
-            src = u
-            player.dispatchEvent(update);
-          }
-        });
-      }
-    });
-  }*/
 }

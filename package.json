@@ -10,8 +10,7 @@
   "author": "Eddie Qi",
   "license": "MIT",
   "dependencies": {
-    "fibers": "^1.0.13",
-    "soundcloud": "^3.1.2",
-    "sync": "^0.2.5"
+    "deasync": "^0.1.7",
+    "soundcloud": "^3.1.2"
   }
 }

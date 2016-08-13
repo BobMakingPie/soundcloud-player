@@ -50,9 +50,7 @@ module.exports = {
 
   getObj: function (id, cb) {
     var trkObj = {id: id};
-    console.log("yes");
     sc.get("/tracks/" + id).then(function (d) {
-      console.log("yes");
       if (!d.errors) {
         trkObj.title = d.title;
         trkObj.uploader = d.user.username;

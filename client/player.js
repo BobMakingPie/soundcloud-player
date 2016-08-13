@@ -1,6 +1,5 @@
 // initialise things so i can use them in the console
 var update, player, url, submit, src, id, queue, qTemplate, queueE;
-var deasync = require("deasync");
 
 function addToQueue(trkObj) {
   if (queue.length >= 50) {
@@ -44,19 +43,15 @@ window.onload =  function() {
 
   submit.onclick = function () {
     scMeme.resolve(url.value, function (err, data) {
-      console.log("resolved");
       if (!err) {
         if (data.kind == "track") {
-
-          console.log("trk");
+          
           scMeme.getObj(data.id, function(err, d) {
-            console.log("hi");
             if (!err) { addToQueue(d) }
           });
 
         } else if (data.kind == "playlist") {
 
-          console.log("playlist");
           data.tracks.forEach(function(t) {
             scMeme.getObj(t.id, function(err, d) {
               if (!err) { addToQueue(d) }
